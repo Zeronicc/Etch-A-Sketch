@@ -43,27 +43,28 @@ let gridSelector = document.createElement('div');
 function showOptions(){
     let btnContainer = document.createElement("div");
     let btn10 = document.createElement("button");
-    let btn16 = document.createElement("button");
     let btn20 = document.createElement("button");
     let btn30 = document.createElement("button");
+    let btn40 = document.createElement("button");
 
     btn10.textContent = "10 X 10";
-    btn16.textContent = "16 X 16";
     btn20.textContent = "20 X 20";
     btn30.textContent = "30 X 30";
+    btn40.textContent = "40 X 40";
 
     btnContainer.className ="gridSizes"
 
     title.appendChild(btnContainer)
     btnContainer.appendChild(btn10);
-    btnContainer.appendChild(btn16);
     btnContainer.appendChild(btn20);
     btnContainer.appendChild(btn30);
+    btnContainer.appendChild(btn40);
+
     
     btn10.addEventListener('click', () => showGrid(10));
-    btn16.addEventListener('click', () => showGrid(16));
     btn20.addEventListener('click', () => showGrid(20));
     btn30.addEventListener('click', () => showGrid(30));
+    btn40.addEventListener('click', () => showGrid(40));
 }
 
 startBtn.addEventListener('click', (e) => { showOptions();title.removeChild(startBtn); container.style.display = 'inline-grid';})
