@@ -8,7 +8,7 @@ let title = document.querySelector(".title");
 let colorBtn = document.querySelector("#colorMode");
 let eraserBtn = document.querySelector("#erase");
 let clearBtn = document.querySelector("#clearBtn");
-let blackBtn = document.querySelector('#blackBtn');
+let rainbowBtn = document.querySelector('#rainbowBtn');
 let addContainer = document.createDocumentFragment();
 let colorInput = document.querySelector("#color");
 let currentColor = '#333333';
@@ -24,13 +24,8 @@ function clearGrid(){
         gridSquare.style.backgroundColor = '#fefefe';
     }
 }
-function blackTakeOver(){
-    for(const gridSquare of gridSquares){
-        const randomR = Math.floor(Math.random() * 256);
-        const randomG = Math.floor(Math.random() * 256);
-        const randomB = Math.floor(Math.random() * 256);
-        gridSquare.style.backgroundColor = `rgb(${randomR}, ${randomG}, ${randomB})`; 
-    }  
+function rainbowMode(){
+    setCurrentColor(`hsl(${Math.random()* 360}, 100%, 50%)`); 
 }
 
 colorInput.oninput = (e) => setCurrentColor(e.target.value);
@@ -58,7 +53,7 @@ function showOptions(){
     btn30.textContent = "30 X 30";
 
     btnContainer.className ="gridSizes"
-    
+
     title.appendChild(btnContainer)
     btnContainer.appendChild(btn10);
     btnContainer.appendChild(btn16);
@@ -71,14 +66,14 @@ function showOptions(){
     btn30.addEventListener('click', () => showGrid(30));
 }
 
-startBtn.addEventListener('click', (e) => { showOptions();title.removeChild(startBtn);})
+startBtn.addEventListener('click', (e) => { showOptions();title.removeChild(startBtn); container.style.display = 'inline-grid';})
 eraserBtn.addEventListener('click', () => setMode('eraser'))
 colorBtn.addEventListener('click', () => setMode('color'))
 clearBtn.addEventListener('click', () => clearGrid())
-blackBtn.addEventListener('click', () => {blackTakeOver(); setMode('blackMode')})
+rainbowBtn.addEventListener('click', () => {rainbowMode(); setMode('rainbowMode')})
 
 function showGrid(gridSize){    
-    container.style.display = 'inline-grid';
+
     container.innerHTML = '';
     let grid = gridSize * gridSize;
     for(let i = 0; i < grid; i++){
@@ -98,7 +93,7 @@ function changeColor(e){
     e.target.style.backgroundColor = currentColor
     }else if(MODE == 'eraser'){
     e.target.style.backgroundColor = '#fefefe'
-    }else if(MODE == 'blackMode'){
-    e.target.style.backgroundColor = 'black'
+    }else if(MODE == 'rainbowMode'){
+    e.target.style.backgroundColor = `hsl(${Math.random()* 360}, 100%, 50%)`
     }
 }
