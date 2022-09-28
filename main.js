@@ -7,7 +7,7 @@ const page = document.querySelector(".page");
 
 let gridSquares = document.getElementsByClassName("squares");
 let MODE = 'color';
-let title = document.querySelector("#title");
+let title = document.querySelector(".title");
 let colorBtn = document.querySelector("#colorMode");
 let eraserBtn = document.querySelector("#erase");
 let clearBtn = document.querySelector("#clearBtn");
@@ -32,9 +32,9 @@ function setCurrentGrid(newGrid){
 }
 function blackTakeOver(){
     for(const gridSquare of gridSquares){
-        const randomR = Math.floor(Math.random() * 256)
-        const randomG = Math.floor(Math.random() * 256)
-        const randomB = Math.floor(Math.random() * 256)
+        const randomR = Math.floor(Math.random() * 256);
+        const randomG = Math.floor(Math.random() * 256);
+        const randomB = Math.floor(Math.random() * 256);
         ;
     }
 }
