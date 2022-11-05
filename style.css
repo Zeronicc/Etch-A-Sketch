@@ -10,56 +10,94 @@ html{
 }
 #start{
     font-size: 23px;
-    width: 200px;
+    width: 175px;
     height: 50px;
     border-radius: 10px;
     margin-top: 145px;
     margin-bottom: 166px;
-    -webkit-text-stroke-width: 0px;
 }
 
 .title{
     display: flex;
     flex-direction: column;
     align-items: center;
+    color: rgb(255, 255, 255);
     font-size: 40px;
     font-weight: 600;
-    color: rgb(255, 255, 255);
     margin: 10px 0px;
     -webkit-text-stroke-width: 1px;
-    -webkit-text-stroke-color: black;
+    -webkit-text-stroke-color: rgb(36, 36, 36);
     gap: 14px;
+}
+
+.title:hover{
+    -webkit-text-stroke-color: rgb(212, 212, 212);
+    color: rgb(36, 36, 36);
+}
+.grid-container{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
 }
 .container{
     display: inline-grid;
     height: 320px;
     width: 320px;
     box-shadow: 1px 2px 5px black;
+    cursor: pointer;
 }
 .squares{
     background-color: white;
-   
 }
 
-button:active{
-    background-color: black;
-    color: antiquewhite;
+button:hover{
+    background-color: rgb(36, 36, 36);
+    color: rgb(255, 255, 255);
+    cursor: pointer;
+    box-shadow: none;
 }
 
 button{
     font-size: 20px;
     border-radius: 10px;
     padding: 2px 11px;
+    border: 2px rgb(36, 36, 36) solid;
+    box-shadow: 0px 3px 4px;
+    padding: 6px 6px;
+    background-color: rgb(212, 212, 212);
 }
 .gridSizes{
     display: flex;
     gap: 10px;
+    margin-bottom: 10px;
 }
 #color{
-    width: 75px;
-    height: 50px;
+    width: 100%;
+    height: 75px;
+    cursor: pointer;
+    background-color: transparent;
+    appearance: none;
+    border: none;
+}
+
+#color::-webkit-color-swatch{
+    border-radius: 60px;
+    border: 5px black solid;
+    box-shadow: 0px 3px 10px;
+}
+.mode-select{
     margin-top: 10px;
-    border-radius: 3px;
-    background-color: rgb(0, 0, 0);
-    border-color: rgb(0, 0, 0);
+    max-width: 299px;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+}
+
+.mode-select >*{
+    width: 100px;
+    height: 55px;
+    border-radius: 60px;
+    padding: 0px 9px;
+    border-width: 3px;
 }

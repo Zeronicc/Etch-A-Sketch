@@ -10,14 +10,16 @@
 <body>
     <div class="page">
         <div class="title">Etch-A-Sketch</div>
-        <div class="container"></div>
-        <div>    
-            <input type="color" id="color" value="#333333">
+        <div class="grid-container">
+            <div class="container"></div>
         </div>
-        <button id="colorMode">Color</button>
-        <button id="erase">Eraser</button>
-        <button id="clearBtn">Clear</button>
-        <button id="rainbowBtn">Rainbow Takeover</button>
+        <div class="mode-select">  
+            <input type="color" id="color" value="#333333">
+            <button id="colorMode">Color</button>
+            <button id="erase">Eraser</button>
+            <button id="clearBtn">Clear</button>
+            <button id="rainbowBtn">Rainbow</button>
+        </div>
     </div>
     <script src="main.js" defer></script>
 </body>
