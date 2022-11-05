@@ -1,1 +1,2 @@
 # Etch-A-Sketch
+A desktop version of the iconic Etch-A-Sketch that was invented in the late 50s. My adaptation only fully works in desktop, but will work on phone but limited. Made around two busy days of coding. Enjoy! :)
